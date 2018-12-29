@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Vue ToDo List</title>
   </head>
   <body>
     <div id="app">
       <table>
         <!-- table header -->
-        <thead>
-          <tr v-for="item in todos" v-bind:key="item.id">
-            <th class="id">ID</th>
-            <th class="comment">comment</th>
-            <th class="state">status</th>
-            <th class="button">-</th>
-          </tr>
-        </thead>
+        <tr v-for="item in todos" v-bind:key="item.id">
+          <th>{{ item.id }}</th>
+          <td>{{ item.commemt }}</td>
+          <td class="state">
+            // status button <button>{{ item.state }}</button>
+          </td>
+          // delete button
+          <td class="button"><button>Delete</button></td>
+        </tr>
         <tbody>
           <!-- [1] display the item of todoList here -->
         </tbody>
