@@ -10,7 +10,7 @@
       <table>
         <!-- table header -->
         <thead>
-          <tr>
+          <tr v-for="item in todos" v-bind:key="item.id">
             <th class="id">ID</th>
             <th class="comment">comment</th>
             <th class="state">status</th>
