@@ -23,6 +23,9 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  data: {
+    todos: []
+  },
   router,
   components: { App },
   template: '<App/>'
