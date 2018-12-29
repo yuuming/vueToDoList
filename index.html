@@ -22,6 +22,13 @@
           <!-- [1] display the item of todoList here -->
         </tbody>
       </table>
+      <h2>Add new list</h2>
+      <form class="add-form" v-on:submit.prevent="doAdd">
+        <!-- comment field -->
+        Comment <input type="text" ref="comment" />
+        <!-- add button -->
+        <button type="submit">Add</button>
+      </form>
     </div>
     <!-- radio buttons -->
     <!-- ToDo table -->
