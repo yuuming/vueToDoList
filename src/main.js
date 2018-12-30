@@ -26,6 +26,23 @@ new Vue({
   data: {
     todos: []
   },
+  methods: {
+    // add new task
+    doAdd: function (event, value) {
+      var newTask = this.$refs.newTask
+      if (!newTask.value.length) {
+        return
+      }
+      // push newId, newTask and the status to todoList
+      this.todos.push({
+        id: todoStorage.uid++,
+        comment: newTask.value,
+        state: 0
+      })
+      // empty newTask value
+      newTask.value = ''
+    }
+  },
   router,
   components: { App },
   template: '<App/>'
