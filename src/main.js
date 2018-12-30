@@ -45,6 +45,10 @@ new Vue({
       })
       // empty newTask value
       newTask.value = ''
+    },
+    doRemove: function (item) {
+      var index = this.todos.indexOf(item)
+      this.todos.splice(index, 1)
     }
   },
   watch: {
