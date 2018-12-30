@@ -24,7 +24,13 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   data: {
-    todos: []
+    todos: [],
+    options: [
+      { value: -1, label: 'everything' },
+      { value: 0, label: 'in progress' },
+      { value: 1, label: 'done' }
+    ],
+    currentOption: -1
   },
   created () {
     //  fetch local todo data
