@@ -43,6 +43,14 @@ new Vue({
       newTask.value = ''
     }
   },
+    watch: {
+      // need to make an object to use watch option
+      todos: {
+        handler: function(todos) {
+          todoStorage.save(todos)
+      },
+      deep: true
+    },
   router,
   components: { App },
   template: '<App/>'
