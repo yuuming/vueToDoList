@@ -26,6 +26,10 @@ new Vue({
   data: {
     todos: []
   },
+  created () {
+    //  fetch local todo data
+    this.todos = todoStorage.fetch()
+  },
   methods: {
     // add new task
     doAdd: function (event, value) {
