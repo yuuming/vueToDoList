@@ -46,6 +46,10 @@ new Vue({
       // empty newTask value
       newTask.value = ''
     },
+    doChangeState: function (item) {
+      item.state = item.state ? 0 : 1
+    },
+    // delete task from todos
     doRemove: function (item) {
       var index = this.todos.indexOf(item)
       this.todos.splice(index, 1)
