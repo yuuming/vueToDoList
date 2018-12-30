@@ -17,7 +17,9 @@
             <button v-on:click="doChangeState(item)">{{ item.state }}</button>
           </td>
           // delete button
-          <td class="button"><button>Delete</button></td>
+          <td class="button">
+            <button v-on:click.ctrl="doRemove(item)">Delete</button>
+          </td>
         </tr>
         <tbody>
           <!-- [1] display the item of todoList here -->
