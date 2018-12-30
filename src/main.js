@@ -36,6 +36,14 @@ new Vue({
     //  fetch local todo data
     this.todos = todoStorage.fetch()
   },
+  computed: {
+    computedTodos: function () {
+      // everything data current option -1
+      return this.todos.filter(function (el) {
+        return this.currentOption < 0 ? true : this.currentOption === el.state
+      }, this)
+    }
+  },
   methods: {
     // add new task
     doAdd: function (event, value) {
