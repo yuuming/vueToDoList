@@ -1,85 +1,31 @@
+
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+     <table>
+        <!-- table header -->
+        <tr v-for="item in todos" v-bind:key="item.id">
+          <th>{{ item.id }}</th>
+          <td>{{ item.commemt }}</td>
+          <td class="state">
+            // status button 
+            <button v-on:click="doChangeState(item)">{{ item.state }}</button>
+          </td>
+          // delete button
+          <td class="button">
+            <button v-on:click.ctrl="doRemove(item)">Delete</button>
+          </td>
+        </tr>
+        <tbody>
+          <!-- [1] display the item of todoList here -->
+        </tbody>
+      </table>
+      <h2>Add new task</h2>
+      <form class="add-form" v-on:submit.prevent="doAdd">
+        <!-- comment field -->
+        New task <input type="text" ref="newTask" />
+        <!-- add button -->
+        <button type="submit">Add</button>
+      </form>
   </div>
 </template>
 
