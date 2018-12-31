@@ -8,7 +8,7 @@
 </label>
     <table>
       <!-- table header -->
-      <tr v-for="item in todos" v-bind:key="item.id">
+      <tr v-for="item in computedTodos" v-bind:key="item.id">
         <th>{{ item.id }}</th>
         <td>{{ item.commemt }}</td>
         <td class="state">
