@@ -37,6 +37,12 @@ new Vue({
     this.todos = todoStorage.fetch()
   },
   computed: {
+    labels () {
+      return this.options.reduce(function (a, b) {
+        return Object.assign(a, { [b.value]: b.label })
+      }, {})
+      // {0: 'in progress', 1: 'done', -1: 'everything'}
+    },
     computedTodos: function () {
       // everything data current option -1
       return this.todos.filter(function (el) {

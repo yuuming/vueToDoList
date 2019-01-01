@@ -13,7 +13,7 @@
         <td>{{ item.commemt }}</td>
         <td class="state">
           // status button
-          <button v-on:click="doChangeState(item)">{{ item.state }}</button>
+          <button v-on:click="doChangeState(item)">{{ labels[item.state] }}</button>
         </td>// delete button
         <td class="button">
           <button v-on:click.ctrl="doRemove(item)">Delete</button>
